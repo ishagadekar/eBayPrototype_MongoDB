@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html ng-app="ebay" ng-controller = "ebayCheckoutController">
+  <head>
+    <title>{{title}}</title>
+<link href="images/favicon.jpg" rel="icon" type="image/x-icon" />
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.2.3/jquery.payment.min.js"></script>
+
+<!-- If you're using Stripe for payments -->
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src = "angularjs/ebayHomeController.js"></script>
+  </head>
+  <body class = "body" ng-init = "getCheckoutDetails()">
+
+	<div class = "container-fluid">
+	<br>
+		<div class = "row">
+	    	<div class = "col-md-1 col-md-offset-1"><a href = "/"><img class = "logo-image" src="images/logo.jpg" height="50" width="110" /></a></div>
+	    	<div class = "col-md-9"><h2><strong>Checkout</strong></h2>
+	    </div>
+	    
+	    <div class = "row">
+	    <h3 class = "col-xs-12 col-md-4 col-md-offset-1" style = "color: gray">Pay with</h3>
+		</div>  
+			
+		<div class="col-xs-12 col-md-4 col-md-offset-1">
+			<div class="panel panel-default credit-card-box">
+                <div class="panel-heading display-table" >
+                    <div class="row display-tr" >
+                        <div class="display-td" >                            
+                            <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                        </div>
+                    </div>                    
+                </div>
+                <div class="panel-body">
+                    <form role="form" id="payment-form">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="cardNumber">CARD NUMBER</label>
+                                    <div class="input-group">
+                                        <input 
+                                            type="text"
+                                            class="form-control"
+                                            name="cardNumber"
+                                            id = "creditCardNumber"
+                                            placeholder="Valid Card Number" ng-model = "cardnumber"
+                                            required autofocus 
+                                        />
+                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                    </div>
+                                </div>                            
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-7 col-md-7">
+                                <div class="form-group">
+                                    <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                                    <input 
+                                        type="tel" 
+                                        class="form-control" 
+                                        name="cardExpiry"
+                                        id = "expirationDate"
+                                        placeholder="MM / YYYY"
+                                       ng-model = "expdate"
+                                        required 
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xs-5 col-md-5 pull-right">
+                                <div class="form-group">
+                                    <label for="cardCVC">CV CODE</label>
+                                    <input 
+                                        type="text" 
+                                        class="form-control"
+                                        name="cardCVC"
+                                        placeholder="CVC"
+                                        id = "cvvNumber"
+                                        ng-model = "cvv"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="display:none;">
+                            <div class="col-xs-12">
+                                <p class="payment-errors"></p>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger" ng-hide = "invalidDetails">
+  						<strong>Please provide valid inputs for all the fields!</strong></div> 
+                    </form>
+                </div>
+            </div>   
+		</div>
+			
+                <div class = "col-md-3 col-md-offset-1 sellerform outline padding">
+					<h4><label class = "padding">{{itemLabel}} ({{totalQuantity}})</label> 
+						<label class = "col-md-offset-5">${{cartTotal}}</label></h4>
+					<hr style="width: 100%; color: gray; height: 1px; background-color:gray;" />
+					<h3 class = "padding">Order total <label class = "col-md-offset-8">${{cartTotal}}</label></h3><br>
+					<input class = "btn btn-primary col-md-offset-4" type = "button" value = "Confirm and pay" ng-click = "validateCardDetails()">
+					<br><br>
+				</div>
+				
+				<br><br><br>
+ 	<div class = "col-md-9 col-md-offset-1" ng-show="cardValidated">
+	        	<p><h3 style = "color:green"><span style = "color:green" class="glyphicon glyphicon-ok-sign">
+	        		</span>Your order has been placed. Thank you for shopping with us!</h3></p>
+	        		<ul><h4><a href = "/home">Shop more!</a></h4></ul>
+	</div> 
+	</div>  
+
+</body>
+</html>

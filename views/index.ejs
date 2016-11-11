@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="ebay" ng-controller = "ebayHomeController">
+  <head>
+    <title><%= title%></title>
+<link href="images/favicon.jpg" rel="icon" type="image/x-icon" />
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src = "angularjs/ebayHomeController.js"></script>
+  </head>
+  <body class = "body">
+ 
+    <nav class="navbar navbar-light">
+  		  Hi! <a data-id="signlink" id = "signlink" class="nav-link" href = "/signInSignUpForm">Sign in or register</a>
+	</nav>
+    <a href = "/"><img class = "logo-image" src="images/logo.jpg" height="50" width="110" /></a>
+    
+    <div id="myCarousel" class="carousel slide">
+    
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+        <div class="active item" data-interval="3000">
+            <img src="images/Flash_image7.jpg" />
+        </div>
+        <div class="item" data-interval="6000">
+            <img src="images/Flash_image5.jpg" />
+        </div>
+    </div>
+    
+    <!-- Carousel nav -->
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
+    
+
+</body>
+</html>

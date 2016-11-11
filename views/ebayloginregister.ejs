@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html ng-app="ebay" ng-controller = "ebayHomeController">
+<head>
+<title>{{title}}</title>
+<link href="images/favicon.jpg" rel="icon" type="image/x-icon" />
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src = "angularjs/ebayHomeController.js"></script>
+  </head>
+ <body class = "body" style = " padding-top: 110px;">
+<div class="container-fluid">
+    	<div class="row">
+			<div class="col-md-5 col-md-offset-3">
+			<a href="/"><img class = "logo-image col-md-offset-4" src="images/logo.jpg" height="50" width="110" /></a>
+			<br><br><br>
+				<div class="panel panel-login" ng-hide="showCatalogLink">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-6">
+							<span style = "color:gray" class="glyphicon glyphicon-circle-arrow-right">
+								<a href="#" class="active" id="login-form-link">Sign in</a>
+							</div>
+							<div class="col-xs-6">
+							<span style = "color:gray" class="glyphicon glyphicon-plus-sign">
+								<a href="#" id="register-form-link">Register</a>
+							</div>
+						</div>
+						<hr>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-12">
+								<form id="login-form" role="form" style="display: block;">
+									<div class="form-group">
+										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Email" ng-model = "username" autofocus required>
+									</div>
+									<div class="form-group">
+										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password" ng-model = "password" required>
+									</div>
+									<div class="alert alert-danger" ng-hide = "userExists">
+  										<strong>{{registerPageError}}</strong> 
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-primary" value="Sign in">
+											</div>
+										</div>
+									</div>
+								</form>
+								<form id="register-form" role="form" style="display: none;">
+									<div class="form-group">
+										<input class="form-control" type="text" tabindex="1" placeholder = "First name" id = "firstName" ng-model = "firstName" autofocus required>
+									</div>
+									<div class="form-group">
+	        							<input class="form-control" type="text" tabindex="1" placeholder = "Last name" id = "lastName" ng-model = "lastName" required>
+									</div>
+									<div class="form-group">
+										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" ng-model = "username" required>
+									</div>
+									<div class="form-group">
+										<input type="text" name="address" id="address" tabindex="1" class="form-control" placeholder="Address" ng-model = "address" required>
+									</div>
+									<div class="form-group">
+										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password" ng-model = "password" required>
+									</div>
+									<div class="form-group">
+										<label tabindex="2" class = "col-md-6" style = "color:gray">Date of Birth : </label>
+										<input tabindex="2" class = "form-control" style = "color:gray" type="date" placeholder = "Date of birth" id = "dob" ng-model = "dob" required>
+									</div>
+									<div class="form-group">
+										<input tabindex="2" class = "form-control" style = "color:gray" type="tel" pattern="^\d{3}-\d{3}-\d{4}$" placeholder = "Mobile phone (format : xxx-xxx-xxxx)" id = "phone" ng-model = "phone" required>
+									</div>
+									<div class="alert alert-danger" ng-hide = "userExists">
+  										<strong>{{registerPageError}}</strong> 
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+											<input type="submit" name="login-submit" id="register-submit" tabindex="4" class="form-control btn btn-primary" value="Register">
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class = "signinformwhite padding" ng-show="showCatalogLink">
+	        					<p><h3 style = "color:green"><span style = "color:green" class="glyphicon glyphicon-ok-sign"></span>Welcome to eBay {{firstName}}!</h3></p>
+	        						<br><br>
+	        					<p>Let's go shopping!</p>
+	        					<a href = "/signInSignUpForm">Click here to login with your username and password</a><br><br>
+	    						</div>
+			</div>
+		</div>
+	</div>
+	<body>

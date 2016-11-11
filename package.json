@@ -1,0 +1,17 @@
+{
+  "name": "Ebay_MongoDB",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha"	
+  },
+  "dependencies": {
+    "express": "3.2.6",
+    "ejs": "*"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
+  }
+}

@@ -1,0 +1,42 @@
+{"@message":"Listing to be created is a bid product for user with id = 2 with bid end date = 2016-10-26","@timestamp":"2016-10-22 19:23:14","@fields":{"level":"info"}}
+{"@message":"Listing for bidding created for for user with id = 2","@timestamp":"2016-10-22 19:23:14","@fields":{"level":"info"}}
+{"@message":"Bid product button clicked for item id = undefined by user with id = undefined","@timestamp":"2016-10-23 11:34:57","@fields":{"level":"info"}}
+{"@message":"Bid amount of 842 for item id = undefined entered in DB for user with id = 3","@timestamp":"2016-10-23 11:34:58","@fields":{"level":"info"}}
+{"@message":"Bid amount entered in DB successully for user with id = 3","@timestamp":"2016-10-23 11:34:58","@fields":{"level":"info"}}
+{"@message":"Bid product button clicked for item id = 3 by user with id = undefined","@timestamp":"2016-10-23 11:36:16","@fields":{"level":"info"}}
+{"@message":"Bid amount of 842 for item id = 3 entered in DB for user with id = 3","@timestamp":"2016-10-23 11:36:16","@fields":{"level":"info"}}
+{"@message":"Bid amount entered in DB successully for user with id = 3","@timestamp":"2016-10-23 11:36:16","@fields":{"level":"info"}}
+{"@message":"Bid product button clicked for item id = 3 by user with id = undefined","@timestamp":"2016-10-23 11:38:2","@fields":{"level":"info"}}
+{"@message":"Bid amount of 843 for item id = 3 entered in DB for user with id = 3","@timestamp":"2016-10-23 11:38:2","@fields":{"level":"info"}}
+{"@message":"Bid amount entered in DB successully for user with id = 3","@timestamp":"2016-10-23 11:38:2","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = undefined has arrived","@timestamp":"2016-10-25 18:18:23","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = undefined has arrived","@timestamp":"2016-10-25 18:21:52","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = undefined has arrived","@timestamp":"2016-10-25 18:25:6","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = undefined has arrived","@timestamp":"2016-10-25 18:26:3","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = undefined has arrived","@timestamp":"2016-10-25 18:26:22","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = undefined has arrived","@timestamp":"2016-10-25 18:26:46","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = undefined has arrived","@timestamp":"2016-10-25 18:28:56","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = undefined has arrived","@timestamp":"2016-10-25 18:29:29","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = undefined has arrived","@timestamp":"2016-10-25 18:30:6","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = undefined has arrived","@timestamp":"2016-10-25 18:31:7","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = 3 has arrived","@timestamp":"2016-10-25 18:37:7","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = 3 has arrived","@timestamp":"2016-10-25 18:52:5","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = 3 has arrived","@timestamp":"2016-10-25 18:54:38","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = 3 has arrived","@timestamp":"2016-10-25 18:59:3","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = 3 has arrived","@timestamp":"2016-10-25 18:59:40","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = 3 has arrived","@timestamp":"2016-10-25 19:3:48","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = 3 has arrived","@timestamp":"2016-10-25 19:6:20","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = 3 has arrived","@timestamp":"2016-10-25 19:6:57","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = 3 has arrived","@timestamp":"2016-10-25 19:11:9","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = 3 has arrived","@timestamp":"2016-10-25 19:15:1","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = 3 has arrived","@timestamp":"2016-10-25 19:16:47","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = 3 has arrived","@timestamp":"2016-10-25 19:18:30","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = 3 has arrived","@timestamp":"2016-10-25 19:21:40","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = 3 has arrived","@timestamp":"2016-10-25 19:23:13","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = 3 has arrived","@timestamp":"2016-10-25 19:26:44","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = 3 has arrived","@timestamp":"2016-10-25 19:27:51","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = 3 has arrived","@timestamp":"2016-10-25 19:29:48","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = 3 has arrived","@timestamp":"2016-10-25 19:32:7","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = 3 has arrived","@timestamp":"2016-10-25 19:42:12","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = 3 has arrived","@timestamp":"2016-10-25 19:43:32","@fields":{"level":"info"}}
+{"@message":"Bid end date 2016-10-25 for item with id = 3 has arrived","@timestamp":"2016-10-25 19:43:54","@fields":{"level":"info"}}

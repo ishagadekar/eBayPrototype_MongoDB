@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="ebay" ng-controller = "ebayShoppingCartController">
+<head>
+<title>{{title}}</title>
+<link href="images/favicon.jpg" rel="icon" type="image/x-icon" />
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src = "angularjs/ebayHomeController.js"></script>
+  </head>
+  <body class = "body" ng-init = "initialize()">
+ 
+    <nav class="navbar navbar-light">
+    	<div class = "row">
+    	  <div class = "col-md-1">Hi  <a class="dropdown-toggle" style="margin-left: -2px;" data-toggle="dropdown" href="#">
+                {{user.firstname}}! </a>
+            <ul class="dropdown-menu"  role="menu" aria-labelledby="dropdownMenu">
+            <li class = "padding"> {{user.firstname}} {{user.lastname}}
+            </li>
+            <li> <a href="/myebay">{{user.handle}}</a>
+            </li>
+        </ul>
+        </div>
+               
+  		  <div class = "col-md-8"><a class="nav-link" href = "/signout" ng-click = "signout()">Sign out</a></div>
+  		  <div class = "col-md-3"><a class="nav-link" href = "/sellItems">Sell</a> | <a class="nav-link" href = "/myebay">My eBay</a>
+  		  <a href = "/shoppingcart"><img src="images/cart.png" height="22" width="20" /></a> </div>
+  		  <h6 ng-show = "showLoginTime"><label class = "padding">Last login : {{user.logintime}}<label></h6>
+	</nav>
+    <a href = "/"><img class = "logo-image" src="images/logo.jpg" height="50" width="110" /></a>
+    
+    <h2>Your eBay Shopping Cart</h2>
+    
+     <div class ="sellerform padding col-md-7" ng-show = "emptyCart">
+	 	<h4>{{emptyCartMsg1}}</h4>
+		<p>{{emptyCartMsg2}}</p>	
+		<p>{{emptyCartMsg3}}</p>	
+		<ul>
+			<li><a href = "/home">Start shopping and search for great deals</a></li>
+		</ul>
+	</div>
+	
+	<div class = "row">
+	<div class ="sellerform padding col-md-7" ng-hide = "emptyCart" ng-repeat = "cartItem in cartItems">
+		<label>Seller : {{cartItem.sellername}}</label><br><br>
+		<div class = "row">
+        	<img class = "col-md-3" src="images/listing.jpg" height="150" width="150"/>
+        	<h4 class = "col-md-offset-1">{{cartItem.itemname}}</h4>
+        	<label class = "col-md-offset-7">${{cartItem.itemprice}}</label>
+        	<h4><label>Quantity : {{cartItem.quantity}}</label></h4>
+	        <a class = "col-md-offset-7" style="cursor: pointer;" ng-click="removeItemById(cartItem)">Remove</a>
+        </div>
+        <hr style="width: 90%; color: black; height: 1px; background-color:black;" />
+	</div>
+	
+	<div class ="sellerform padding col-md-3 col-md-offset-1">
+	 	<h3><strong>Cart Summary</strong></h3>
+	 	<hr style="width: 90%; color: black; height: 1px; background-color:black;" />
+		<h3><strong>Total: ${{cartTotal}}</strong></h3>	
+   			 <input type="button" id = "checkoutbutton" ng-click = "checkout()" class = "btn btn-primary" value="Proceed to checkout"/><br><br>
+   			 <div class="alert alert-danger" ng-show = "showcheckouterror">
+  						<strong>No items in your cart to checkout!</strong></div> 
+	</div>
+   </div>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html ng-app="ebay" ng-controller = "ebaySellerController">
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+<link href="images/favicon.jpg" rel="icon" type="image/x-icon" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src = "angularjs/ebayHomeController.js"></script>
+</head>
+<body class = "body">
+  
+ <div class = "container-fluid">
+ 
+    <a href = "/"><img class = "logo-image" src="images/logo.jpg" height="50" width="110" /></a>
+
+	<br><br>
+	 <div class ="sellerform padding">
+	 	
+	 	<h4>Describe your item</h4>
+	 	<hr style="width: 90%; color: black; height: 1px; background-color:black;" />
+	 	<div class="form-group row padding">
+		  <label for="title" class="col-md-2 col-form-label">Title</label>
+		  <form role="form">
+		  <div class="col-md-9 form-group">
+		    <input class="form-control" type="text" placeholder = "Item name" ng-model = "itemname" required>
+		  </div>
+		 
+		 </div>
+		 
+		  <div class="form-group row padding">
+		  <label for="description" class="col-md-2 col-form-label">Description</label>
+		  <div class="col-md-9">
+		    <input class="form-control" type="text" placeholder = "Short description of your item" ng-model = "itemdescription">
+		  </div>
+		</div>
+		
+		<div class="form-group row padding">
+		  <label class="col-md-12 col-form-label">Item specifics</label><br><br>
+		 
+		<div class = "col-md-9 col-md-offset-2">
+        <label class="radio-inline">
+          <input name="radioGroup" id="bidproduct" value="bid" checked="" type="radio"> Bid product
+        </label>
+        <label class="radio-inline">
+          <input name="radioGroup" id="sellproduct" value="sell" type="radio"> Sell directly	
+        </label>
+        </div><br><br><br>
+		  
+      	   <label for="bidprice" class="col-md-2 col-form-label active" id ="bidlabel">Bid base price</label>
+		  <div class="col-md-2 active" id = "biddiv">
+		    <input class="form-control" type="number" placeholder = "$" ng-model = "itemprice">
+		  </div>
+		  <label for="price" style = "display:none;" class="col-md-2 col-form-label" id = "pricelabel">Price</label>
+		  <div class="col-md-2" id = "pricediv" style = "display:none;">
+		    <input class="form-control" type="number" placeholder = "$" ng-model = "itemprice">
+		  </div>
+		  <label for="quantity" style = "display:none;" class="col-md-2 col-form-label" id = "quantitylabel">Quantity</label>
+		  <div class="col-md-2" id = "quantitydiv" style = "display:none;">
+		    <input class="form-control" type="number" placeholder = "Quantity to sell" ng-model = "itemquantity">
+		  </div>
+		</div>
+	 </div>
+	 
+	 <br><br>
+	 <div class ="sellerform padding">
+	 	<h4>Review your preferences</h4>
+	 	<hr style="width: 90%; color: black; height: 1px; background-color:black;" />
+	 	
+	 	<div class="form-group row padding">
+		  <label for="sellername" class="col-md-2 col-form-label">Seller Name</label>
+		  <div class="col-md-9">
+		    <label id = "sellername">{{user.firstname}}</label>
+		  </div>
+		</div>
+		
+	 	<div class="form-group row padding">
+		  <label for="address" class="col-md-2 col-form-label">Address</label>
+		  <div class="col-md-9">
+		    <input class="form-control" type="text" placeholder = "Address" ng-model = "itemaddress">
+		  </div>
+		</div>
+		 
+		  <div class="form-group row padding">
+		  	<label for="handlingtime" class="col-md-2 col-form-label">Handling time</label>
+		  <div class="col-md-3">
+		    <input class="form-control" type="text" placeholder = "Handling time (upto 3 business days)" ng-model = "itemhandlingtime">
+		  </div>
+		</div>
+		
+	 </div>
+</form>
+		<br>
+		<input type = "button" class = "btn btn-primary" value = "Create Listing" ng-click = "createListing()"><br><br>
+	 <div ng-show="listingCreated">
+	        	<p><h3 style = "color:green"><span style = "color:green" class="glyphicon glyphicon-ok-sign">
+	        		</span>{{firstName}} Your Listing has been created!</h3></p>
+	        	<br>
+	</div>
+    
+	</div>
+</body>
+</html>

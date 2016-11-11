@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html ng-app="ebay" ng-controller = "ebayLoginController">
+  <head>
+    <title>{{title}}</title>
+<link href="images/favicon.jpg" rel="icon" type="image/x-icon" />
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src = "angularjs/ebayHomeController.js"></script>
+  </head>
+  <body class = "body" ng-init="getMyEbayDetails()">
+ 
+    <nav class="navbar navbar-light">
+    	<div class = "row">
+    	  <div class = "col-md-1">Hi  <a class="dropdown-toggle" style="margin-left: -2px;" data-toggle="dropdown" href="#">
+                {{user.firstname}}! </a>
+            <ul class="dropdown-menu"  role="menu" aria-labelledby="dropdownMenu">
+            <li class = "padding"> {{user.firstname}} {{user.lastname}}
+            </li>
+            <li> <a href="/myebay">{{user.handle}}</a>
+            </li>
+        </ul>
+        </div>
+               
+  		  <div class = "col-md-8"><a class="nav-link" href = "/signout" ng-click = "signout()">Sign out</a></div>
+  		  <div class = "col-md-3"><a class="nav-link" href = "/sellItems">Sell</a> | <a class="nav-link" href = "/myebay">My eBay</a>
+  		  <a href = "/shoppingcart"><img src="images/cart.png" height="22" width="20" /></a> </div>
+  		  <h6 ng-show = "showLoginTime"><label class = "padding">Last login : {{user.logintime}}<label></h6>
+	</nav>
+    <a href = "/"><img class = "logo-image" src="images/logo.jpg" height="50" width="110" /></a>
+    <br><br>
+    <h3>My eBay: Summary for {{user.handle}}</h3>
+    
+    <div class="row">
+    	<div class="col-md-12">
+            <div class="panel with-nav-tabs panel-default">
+                <div class="panel-heading">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#purchasehistory" data-toggle="tab">Purchase history</a></li>
+                            <li><a href="#sellhistory" data-toggle="tab">Sell history</a></li>
+                            <li><a href="#account" data-toggle="tab">Account</a></li>
+                        </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="purchasehistory">
+								<div role="tabpanel" style = "color:gray"  ng-show = "showPurchaseHistory">
+				                <h4 class="heading"><strong>Purchase History</strong></h4>
+					               <div class ="sellerform padding col-md-7" ng-repeat = "purchasedItem in purchasedItems">
+					               <h4><strong>Order Id : </strong>{{purchaseHistory[$index].orderId}}</h4>
+										<div class = "row top-buffer">
+								        	<img class = "col-md-3" src="images/listing.jpg" height="150" width="150"/>
+								        	<h4 class = "col-md-offset-1">Product name: {{purchasedItem.itemname}}</h4>
+								        	<h6>Seller : {{purchasedItem.sellername}}</h6>
+								        	<h5><strong>Amount paid: </strong>${{purchasedItem.itemprice}}</h5>
+								        	<h5><strong>Date : </strong> {{purchaseHistory[$index].datepurchased}}</h5>
+								        	<h5><strong>Quantity : {{purchaseHistory[$index].quantitybought}}</strong></h5>
+								        </div>
+								        <hr style="width: 90%; color: black; height: 1px; background-color:black;" />
+									</div>
+					           </div> 
+		           
+					           <div role="tabpanel" ng-hide = "showPurchaseHistory">	
+					           		<div class = "row">
+					            	<h3 class = "col-md-offset-3" style = "color:gray" class="heading"><strong>No purchase history found!</strong><span></span></h3>
+					            	<ul>
+										<a class = "col-md-offset-3" href = "/home">Start shopping and search for great deals</a>
+									</ul>
+									<img src = "images/listing2.jpg" height = "150px" width = "180px">
+									</div>
+					           </div>
+						</div>
+                        
+                        
+                        <div class="tab-pane fade" id="sellhistory">
+								            <div role="tabpanel" style = "color:gray"  ng-show = "showSellHistory">
+							                 <h4 class="heading"><strong>Sell History</strong></h4>
+								               <div class ="sellerform padding col-md-7" ng-repeat = "sellItem in sellItems">
+								                <h4><strong>Order Id : </strong>{{sellHistory[$index].orderId}}</h4>
+													<div class = "row top-buffer">
+											        	<img class = "col-md-3" src="images/listing.jpg" height="150" width="150"/>
+											        	<h4 class = "col-md-offset-1">{{sellItems.itemname}}</h4>
+											        	<h5><strong>Amount received: </strong>${{sellItem.itemprice}}</h5>
+											        	<h5><strong>Date sold: </strong> {{sellHistory[$index].datesold}}</h5>
+											        	<h5><strong>Quantity sold: {{sellHistory[$index].quantitysold}}</strong></h5>
+											        </div>
+											        <hr style="width: 90%; color: black; height: 1px; background-color:black;" />
+												</div>
+								           </div> 
+								           
+								           <div role="tabpanel" ng-hide = "showSellHistory">
+								           		<div class = "row">
+								            	<h3 class = "col-md-offset-3" style = "color:gray" class="heading"><strong>No sell history found!</strong><span></span></h3>
+								            	<ul>
+													<a class = "col-md-offset-3" href = "/sellItems">Start selling by clicking here!</a>
+												</ul>
+												<img src = "images/listing2.jpg" height = "150px" width = "180px">
+												</div>
+								           </div>
+								
+								</div> 
+						
+                        <div class="tab-pane fade" id="account">
+								<div class="form_main col-md-4 col-sm-5 col-xs-7">
+								<div role="tabpanel" style = "color:gray">
+					               <h4 class="heading"><strong>Account Summary</strong></h4>
+					                <div>
+					               		<label class = "col-md-12">First name : {{user.firstname}}</label><br><br>
+					               		<label class = "col-md-12">Last name : {{user.lastname}}</label><br><br>
+					               		<label class = "col-md-12">Username/Email Id : {{user.email}}</label><br><br>
+					               		<label class = "col-md-12">Date of birth : {{user.dob}}</label><br><br>
+					               		<label class = "col-md-12">Contact number : {{user.phone}}</label><br><br>
+					               		<label class = "col-md-12">Location : {{user.address}}</label><br><br>
+					                </div>
+					            </div>
+						</div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

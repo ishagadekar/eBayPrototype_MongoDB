@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="ebay" ng-controller = "ebayUserController">
+  <head>
+    <title>{{title}}</title>
+<link href="images/favicon.jpg" rel="icon" type="image/x-icon" />
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src = "angularjs/ebayHomeController.js"></script>
+  </head>
+  <body class = "body" ng-init="initialize()">
+  
+ 	<div class = "container-fluid">
+    <nav style = "background-size: 250px 200px" class="navbar navbar-light">
+  		  <div class = "col-md-2">Hi <a href = "/userprofile/{{user.handle}}">{{user.firstname}}!</a></div>
+  		  <div class = "col-md-7"><a class="nav-link" href = "/signout" ng-click = "signout()">Sign out</a></div>
+  		  <div class = "col-md-2"><a class="nav-link" href = "/sellItems">Sell</a> | <a class="nav-link" href = "/myebay">My eBay</a></div>
+  		  <div class = "col-md-1"><a href = "/shoppingcart"><img src="images/cart.png" height="22" width="20" /></a></div>
+	</nav>
+    <a href = "/"><img class = "logo-image" src="images/logo.jpg" height="50" width="110" /></a>
+    
+    <br><br><br>
+    
+    <h4>{{user.handle}}</h4>
+    
+    <div class = "signinformwhite padding col-md-9">
+    	<label for "birthdate">Birth Date</label>
+    	<input type = "date" id = "birthdate" required><br><br>
+    	<label for "contactnumber">Contact Number</label>
+    	<input type = "tel" id = "contactnumber" required><br><br>
+    	<label for "address">Address</label>
+    	<input type = "text" id = "address" required><br><br>
+    </div>
+    
+    </div>
+
+</body>
+</html>
